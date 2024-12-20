@@ -6,8 +6,6 @@ def _submodule_repository_impl(repository_ctx):
     # https://github.com/bazelbuild/bazel/commit/8edf6abec40c848a5df93647f948e31f32452ae6
     workspace_root = repository_ctx.path(Label("//:WORKSPACE.bazel")).dirname
 
-    print("!!!!! workspace_root = {}, vs in ctx: {}".format(workspace_root, repository_ctx.workspace_root))
-
     #    workspace_root = repository_ctx.workspace_root
 
     for segment in repository_ctx.attr.path.split("/"):
@@ -24,13 +22,13 @@ _submodule_repository = repository_rule(
 )
 
 def submodule_repository(name, path, external):
-    if not external:
-        native.local_repository(
+    if external:
+        _submodule_repository(
             name = name,
             path = path,
         )
     else:
-        _submodule_repository(
+        native.local_repository(
             name = name,
             path = path,
         )
