@@ -6,6 +6,8 @@ def _submodule_repository_impl(repository_ctx):
     # https://github.com/bazelbuild/bazel/commit/8edf6abec40c848a5df93647f948e31f32452ae6
     workspace_root = repository_ctx.path(Label("//:WORKSPACE.bazel")).dirname
 
+    print(f"!!!!! workspace_root = {workspace_root}, vs in ctx: {repository_ctx.workspace_root}")
+
     #    workspace_root = repository_ctx.workspace_root
 
     for segment in repository_ctx.attr.path.split("/"):
