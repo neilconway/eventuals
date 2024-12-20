@@ -7,7 +7,7 @@ def submodules(external = True):
     """Creates repositories for each submodule.
 
     Args:
-          external: whether or not we're invoking this function as though
+          external: whether or not we're invoking this function as
             though we're an external dependency
     """
     maybe(
