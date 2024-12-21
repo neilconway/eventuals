@@ -89,13 +89,10 @@ def repos(repo_mapping = {}):
 
     maybe(
         http_archive,
-        name = "com_google_protobuf",
-        strip_prefix = "protobuf-3.19.1",
-        urls = [
-            "https://mirror.bazel.build/github.com/protocolbuffers/protobuf/archive/v3.19.1.tar.gz",
-            "https://github.com/protocolbuffers/protobuf/archive/v3.19.1.tar.gz",
-        ],
-        sha256 = "87407cd28e7a9c95d9f61a098a53cf031109d451a7763e7dd1253abf8b4df422",
+        name = "rules_proto",
+        sha256 = "14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4",
+        strip_prefix = "rules_proto-7.1.0",
+        url = "https://github.com/bazelbuild/rules_proto/releases/download/7.1.0/rules_proto-7.1.0.tar.gz",
         repo_mapping = repo_mapping,
     )
 
