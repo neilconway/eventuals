@@ -6,12 +6,9 @@ def _submodule_repository_impl(repository_ctx):
     # https://github.com/bazelbuild/bazel/commit/8edf6abec40c848a5df93647f948e31f32452ae6
     workspace_root = repository_ctx.path(Label("//:WORKSPACE.bazel")).dirname
 
-    #    workspace_root = repository_ctx.workspace_root
-
     for segment in repository_ctx.attr.path.split("/"):
         workspace_root = workspace_root.get_child(segment)
 
-    print("got here!!! final ws_root = {}, cxt ws_root = {}".format(workspace_root, repository_ctx.workspace_root))
     repository_ctx.symlink(workspace_root, "")
 
 _submodule_repository = repository_rule(
