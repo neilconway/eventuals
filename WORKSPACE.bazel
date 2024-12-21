@@ -10,6 +10,10 @@ load("//bazel:repos.bzl", eventuals_repos = "repos")
 
 eventuals_repos()
 
+load("//bazel:grpc_repos.bzl", eventuals_grpc_repos = "grpc_repos")
+
+eventuals_grpc_repos()
+
 load("//bazel:py_toolchains.bzl", eventuals_py_toolchains = "py_toolchains")
 
 eventuals_py_toolchains()
@@ -21,9 +25,3 @@ eventuals_pypi_repos()
 load("//bazel:deps.bzl", eventuals_deps = "deps")
 
 eventuals_deps()
-
-load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
-
-grpc_extra_deps()
-
-########################################################################
