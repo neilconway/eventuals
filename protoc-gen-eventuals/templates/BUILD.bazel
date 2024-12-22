@@ -1,6 +1,6 @@
 """Expose jinja templates to bazel in parent directory."""
 
-exports_files(glob([
-    "*.j2",
-    "*.jj2",
-]))
+exports_files([
+    "eventuals.cc.j2",
+    "eventuals.h.j2",
+])

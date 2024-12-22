@@ -1,6 +1,6 @@
-# TODO: migrate to Bazel modules.
+# Enable both `MODULE.bazel` and `WORKSPACE.bzlmod`, not `WORKSPACE`.
 common --enable_workspace
-common --enable_bzlmod=false
+common --enable_bzlmod
 
 try-import submodules/dev-tools/.bazelrc
 

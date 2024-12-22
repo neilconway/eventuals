@@ -1,8 +1,9 @@
 # NOTE: instead of 'cc_grpc_library' from '@com_github_grpc_grpc'
 # could also use 'cpp_grpc_library' from 'rules_proto_grpc' (by first
-# bringing in 'rules_proto_grpc' in WORKSPACE.bazel).
+# bringing in 'rules_proto_grpc' in WORKSPACE.bzlmod).
 load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
-load("@rules_cc//cc:defs.bzl", "cc_library", "cc_proto_library", "cc_test")
+load("@com_google_protobuf//bazel:cc_proto_library.bzl", "cc_proto_library")
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("//bazel:cc_eventuals_library.bzl", "cc_eventuals_library")
 
