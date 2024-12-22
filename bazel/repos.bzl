@@ -30,15 +30,6 @@ def repos(repo_mapping = {}):
         repo_mapping = repo_mapping,
     )
 
-    maybe(
-        http_archive,
-        name = "rules_proto",
-        sha256 = "14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4",
-        strip_prefix = "rules_proto-7.1.0",
-        url = "https://github.com/bazelbuild/rules_proto/releases/download/7.1.0/rules_proto-7.1.0.tar.gz",
-        repo_mapping = repo_mapping,
-    )
-
     # Hedron's Compile Commands Extractor for Bazel.
     # Latest version available on 2022/07/18.
     # Follow the link to learn how to set it up for your code editor:
@@ -94,14 +85,6 @@ def repos(repo_mapping = {}):
         commit = "c703632657bf4ec9177d9aea0447166d424b3b74",
         shallow_since = "1654243887 +0300",
         repo_mapping = repo_mapping,
-    )
-
-    maybe(
-        http_archive,
-        name = "rules_proto_grpc",
-        sha256 = "2a0860a336ae836b54671cbbe0710eec17c64ef70c4c5a88ccfd47ea6e3739bd",
-        strip_prefix = "rules_proto_grpc-4.6.0",
-        urls = ["https://github.com/rules-proto-grpc/rules_proto_grpc/releases/download/4.6.0/rules_proto_grpc-4.6.0.tar.gz"],
     )
 
     maybe(

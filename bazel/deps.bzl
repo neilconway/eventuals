@@ -13,8 +13,6 @@ load("@com_github_3rdparty_stout//bazel:deps.bzl", stout_deps = "deps")
 load("@com_github_reboot_dev_pyprotoc_plugin//bazel:deps.bzl", pyprotoc_plugin_deps = "deps")
 load("@hedron_compile_commands//:workspace_setup.bzl", "hedron_compile_commands_setup")
 load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")
-load("@rules_proto//proto:toolchains.bzl", "rules_proto_toolchains")
 
 def deps(repo_mapping = {}):
     """Adds external repositories/archives needed by eventuals (phase 2).
@@ -108,8 +106,5 @@ def deps(repo_mapping = {}):
     pyprotoc_plugin_deps(
         repo_mapping = repo_mapping,
     )
-
-    rules_proto_dependencies()
-    rules_proto_toolchains()
 
     rules_foreign_cc_dependencies()
