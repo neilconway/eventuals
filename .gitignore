@@ -2,6 +2,7 @@
 .vscode
 .DS_Store
 user.bazelrc
+MODULE.bazel.lock
 *~
 
 # Files inside submodules. This is moot for git itself, since it knows that
