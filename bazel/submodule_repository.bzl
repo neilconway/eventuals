@@ -22,13 +22,11 @@ _submodule_repository = repository_rule(
 
 def submodule_repository(name, path, external):
     if external:
-        print("creating external submodule for {}, path = {}".format(name, path))
         _submodule_repository(
             name = name,
             path = path,
         )
     else:
-        print("creating local submodule for {}, path = {}".format(name, path))
         local_repository(
             name = name,
             path = path,
